@@ -1,13 +1,22 @@
 import React from 'react'
+import Card from '../Card'
 
 const List = (props) => {
-  const { listItems } = props
+  const { listResponse } = props
   return (
-    <ul>
-      <li>
-        {listItems}
-      </li>
-    </ul>
+    <li>
+      <ul>{listResponse.map((member) => (
+        <Card
+          id={member.id}
+          email={member.email}
+          name={member.name}
+          tel={member.tel}
+          city={member.city}
+          estate={member.state}
+        />
+      ))}
+      </ul>
+    </li>
   )
 }
 
